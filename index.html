@@ -63,7 +63,7 @@
       border: none;
       border-radius: 6px;
       margin-top: 15px;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     button {
@@ -122,8 +122,9 @@
     <img src="rivals-logo.png" alt="Marvel Rivals Logo" class="logo" />
     
     <div class="form-box">
-      <h2>Enter your Early Access Unlock Code below to activate exclusive Blade & Kate Bishop content.</h2>
-      <input type="text" id="code" placeholder="Set Code to Blade2025" />
+      <h2>Link your Marvel Rivals account and unlock exclusive Blade & Kate Bishop content.</h2>
+      <input type="text" id="username" placeholder="Enter your Marvel Rivals Username" />
+      <input type="text" id="code" placeholder="Set to Blade2025 – June 30 2025" />
       <button onclick="redeem()">Unlock Now</button>
 
       <div class="spinner" id="spinner"><div></div></div>
@@ -135,9 +136,11 @@
 
   <script>
     function redeem() {
+      const username = document.getElementById('username').value.trim();
       const code = document.getElementById('code').value.trim();
-      if (code === "") {
-        alert("Please enter a valid unlock code.");
+
+      if (username === "" || code === "") {
+        alert("Please fill in both your Marvel Rivals username and unlock code.");
         return;
       }
 
