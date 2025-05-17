@@ -1,43 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Marvel Rivals Promo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marvel Rivals - Promo Code</title>
   <style>
     body {
-      background-color: #0e0e10;
-      color: white;
+      background-color: #101010;
+      color: #fff;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
       text-align: center;
-      padding: 50px 20px;
     }
-    img {
-      max-width: 250px;
+    .promo-img {
+      width: 100%;
+      max-width: 800px;
+      margin: auto;
+      display: block;
+    }
+    .container {
+      padding: 30px 20px;
+      max-width: 400px;
+      margin: auto;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 14px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      margin-top: 20px;
       margin-bottom: 20px;
+      box-sizing: border-box;
     }
-    .button {
+    button {
       background-color: #e62429;
       color: white;
-      padding: 15px 30px;
-      font-size: 18px;
       border: none;
+      padding: 12px 24px;
+      font-size: 18px;
       border-radius: 8px;
       cursor: pointer;
-      margin-top: 30px;
+      width: 100%;
     }
-    .button:hover {
+    button:hover {
       background-color: #c91d22;
+    }
+    .footer {
+      font-size: 12px;
+      color: #aaa;
+      margin-top: 40px;
+      padding-bottom: 20px;
     }
   </style>
 </head>
 <body>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Marvel_Logo.svg" alt="Marvel Logo">
-  <h1>Marvel Rivals</h1>
-  <p>You’ve received a promotional skin code!</p>
-  <p>Click below to redeem your limited-time exclusive costume.</p>
-  <button class="button" onclick="window.location.href='https://www.youtube.com/watch?v=dQw4w9WgXcQ&autoplay=1&mute=0'">
-    Redeem Code
+  <img src="RRpic.png" alt="Marvel Rivals Promo" class="promo-img" />
+
+  <div class="container">
+    <h2>Redeem Your Exclusive Costume Code</h2>
+    <input type="text" id="code" placeholder="Enter your promo code" />
+    <button onclick="redeem()">Checkout Blade and Kate Bishop Now!</button>
+  </div>
+
+  <div class="footer">© 2025 Marvel. All rights reserved.</div>
+
+  <script>
+    function redeem() {
+      const code = document.getElementById('code').value;
+      if (code.trim() !== "") {
+        window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ&autoplay=1&mute=0";
+      } else {
+        alert("Please enter a valid code.");
+      }
+    }
+  </script>
+</body>
+</html>
+
   </button>
 </body>
 </html>
