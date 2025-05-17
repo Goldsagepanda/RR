@@ -5,25 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Marvel Rivals - Promo Code</title>
   <style>
-    body {
-      background-color: #101010;
-      color: #fff;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .background {
+      background: url('RRpic.png') no-repeat center center/cover;
+      height: 100%;
+      width: 100%;
+      position: fixed;
+      z-index: -1;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      padding: 20px;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.6); /* semi-transparent overlay */
+    }
+
+    .form-box {
+      background-color: rgba(0, 0, 0, 0.75);
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 100%;
       text-align: center;
     }
-    .promo-img {
-      width: 100%;
-      max-width: 800px;
-      margin: auto;
-      display: block;
-    }
-    .container {
-      padding: 30px 20px;
-      max-width: 400px;
-      margin: auto;
-    }
+
     input[type="text"] {
       width: 100%;
       padding: 14px;
@@ -34,6 +54,7 @@
       margin-bottom: 20px;
       box-sizing: border-box;
     }
+
     button {
       background-color: #e62429;
       color: white;
@@ -44,19 +65,16 @@
       cursor: pointer;
       width: 100%;
     }
+
     button:hover {
       background-color: #c91d22;
     }
-    .footer {
-      font-size: 12px;
-      color: #aaa;
-      margin-top: 40px;
-      padding-bottom: 20px;
-    }
+
     .spinner {
       display: none;
       margin-top: 30px;
     }
+
     .spinner div {
       width: 40px;
       height: 40px;
@@ -66,31 +84,40 @@
       border-radius: 50%;
       animation: spin 1s linear infinite;
     }
+
     @keyframes spin {
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
+
     #loading-text {
       display: none;
       margin-top: 15px;
       font-size: 16px;
       color: #bbb;
     }
+
+    .footer {
+      font-size: 12px;
+      color: #aaa;
+      margin-top: 40px;
+    }
   </style>
 </head>
 <body>
-  <img src="RRpic.png" alt="Marvel Rivals Promo" class="promo-img" />
+  <div class="background"></div>
 
   <div class="container">
-    <h2>Redeem Your Exclusive Costume Code</h2>
-    <input type="text" id="code" placeholder="Enter your promo code" />
-    <button onclick="redeem()">Checkout Blade and Kate Bishop Now!</button>
+    <div class="form-box">
+      <h2>Redeem Your Exclusive Costume Code</h2>
+      <input type="text" id="code" placeholder="Enter your promo code" />
+      <button onclick="redeem()">Checkout Blade and Kate Bishop Now!</button>
 
-    <div class="spinner" id="spinner"><div></div></div>
-    <div id="loading-text">Verifying code...</div>
+      <div class="spinner" id="spinner"><div></div></div>
+      <div id="loading-text">Verifying code...</div>
+    </div>
+    <div class="footer">© 2025 Marvel. All rights reserved.</div>
   </div>
-
-  <div class="footer">© 2025 Marvel. All rights reserved.</div>
 
   <script>
     function redeem() {
