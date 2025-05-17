@@ -53,6 +53,29 @@
       margin-top: 40px;
       padding-bottom: 20px;
     }
+    .spinner {
+      display: none;
+      margin-top: 30px;
+    }
+    .spinner div {
+      width: 40px;
+      height: 40px;
+      margin: auto;
+      border: 4px solid white;
+      border-top: 4px solid transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    #loading-text {
+      display: none;
+      margin-top: 15px;
+      font-size: 16px;
+      color: #bbb;
+    }
   </style>
 </head>
 <body>
@@ -62,24 +85,28 @@
     <h2>Redeem Your Exclusive Costume Code</h2>
     <input type="text" id="code" placeholder="Enter your promo code" />
     <button onclick="redeem()">Checkout Blade and Kate Bishop Now!</button>
+
+    <div class="spinner" id="spinner"><div></div></div>
+    <div id="loading-text">Verifying code...</div>
   </div>
 
   <div class="footer">© 2025 Marvel. All rights reserved.</div>
 
   <script>
     function redeem() {
-      const code = document.getElementById('code').value;
-      if (code.trim() !== "") {
-        window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ&autoplay=1&mute=0";
-      } else {
+      const code = document.getElementById('code').value.trim();
+      if (code === "") {
         alert("Please enter a valid code.");
+        return;
       }
+
+      document.getElementById('spinner').style.display = 'block';
+      document.getElementById('loading-text').style.display = 'block';
+
+      setTimeout(() => {
+        window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ&autoplay=1&mute=0";
+      }, 2500);
     }
   </script>
 </body>
 </html>
-
-  </button>
-</body>
-</html>
-
